@@ -1,7 +1,8 @@
 # redis-with-php
 folder /redis for sample pubsub usage
-## provide function to working with cache : Get, Set, HashGet, HashSet, HashGetAll 
+## provide function to working with cache : Get, Set, HashGet, HashSet, HashGetAll , Existed
 ## provide function to working with queue: Dequeue, Enqueue
+## provide function to working with stack: StackPush, StackPop
 ## provide function to pub/sub mechanism: Publish, Subscribe, Unsubscribe
 ### Subscribe should run stand alone process
 eg: php redis/subscribe.php
