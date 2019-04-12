@@ -1,5 +1,5 @@
 # redis-with-php
-folder /redis for sample pubsub usage
+folder /redis for sample pubsub usage. base on PhpBackgroundProcess.php we can do php work like multi thread. we can call any subscribe.php to run as linux process stand alone.
 ## provide function to working with cache : Get, Set, HashGet, HashSet, HashGetAll , Existed
 ## provide function to working with queue: Dequeue, Enqueue
 ## provide function to working with stack: StackPush, StackPop
