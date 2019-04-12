@@ -347,7 +347,7 @@ class RedisClient
     }
 
     public function Publish($channelName, $message)
-    {
+    {   
         return $this->cmd("PUBLISH", $channelName, $message)->set();
     }
 
@@ -358,7 +358,6 @@ class RedisClient
      */
     public function Subscribe($channelName, $onMessage, $onSubscribed = null)
     {
-
         if (!$this->handle) {
             $this->reconnect();
         }
@@ -371,6 +370,10 @@ class RedisClient
         if ($this->exec()) {
             do {
                 try {
+                    if (!$this->handle) {
+                        $this->reconnect();
+                    }
+                    
                     $response = $this->get_response();
                     for ($i = count($response); $i < 4; ++$i) {
                         $response[] = null;
@@ -403,9 +406,6 @@ class RedisClient
 
     public function Unsubscribe($channelName)
     {
-        if (!$this->handle) {
-            $this->reconnect();
-        }
         $this->cmd("UNSUBSCRIBE", $channelName)->set();
     }
 
