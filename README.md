@@ -10,4 +10,4 @@ eg: php redis/subscribe.php
         $bgProc=new PhpBackgroundProcess();
         $bgProc->Run($rootDir."/JobToRunInBg.php", "{name:du, age:35}");
    
-        
+ ### ref: https://github.com/ziogas/PHP-Redis-implementation       
